@@ -82,6 +82,11 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  //优化目录与路径2018-12-01
+  appStyles: resolveApp('src/styles'),
+  appRoutes: resolveApp('src/routes'),
+  appComponents: resolveApp('src/components'),
+  appUtils: resolveApp('src/utils'),
 };
 
 
