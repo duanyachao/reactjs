@@ -225,7 +225,6 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
-
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),
@@ -237,6 +236,7 @@ module.exports = {
                     },
                   },
                 ],
+                ['import', { libraryName: 'antd', style: true }],
               ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -248,20 +248,6 @@ module.exports = {
           },
           // Process any JS outside of the app with Babel.
           // Unlike the application JS, we only compile the standard ES features.
-          // {
-          //   test: /\.less$/,
-          //   use: [
-          //     require.resolve('style-loader'),
-          //     require.resolve('css-loader'),
-          //     {
-          //       loader: require.resolve('less-loader'),
-          //       options: {
-          //         modifyVars: { '@primary-color': '#1890ff' },
-          //       },
-          //     },
-          //   ],
-          // },
-          //配置antd主题颜色2018-12-01
           {
             test: /\.(js|mjs)$/,
             exclude: /@babel(?:\/|\\{1,2})runtime/,
@@ -286,6 +272,21 @@ module.exports = {
               // being evaluated would be much more helpful.
               sourceMaps: false,
             },
+          },
+          //引入less，配置antd主题颜色2018-12-01
+          {
+            test: /\.less$/,
+            use: [
+              require.resolve('style-loader'),
+              require.resolve('css-loader'),
+              {
+                loader: require.resolve('less-loader'),
+                options: {
+                  // modifyVars: { '@primary-color': 'red' },
+                  importLoaders: 1,
+                },
+              },
+            ],
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.

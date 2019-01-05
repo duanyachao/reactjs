@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 // eslint-disable-next-line
 import Utils from '../../utils/utils';
 import './index.less';
+import logo from '../../resource/assets/logo-ant.svg';
 const FormItem = Form.Item;
 
 export default class Login extends Component {
@@ -24,7 +25,7 @@ export default class Login extends Component {
       <div className="login-page">
         <div className="login-header">
           <div className="logo">
-            <img src="/assets/logo-ant.svg" alt="慕课后台管理系统" />
+            <img src={logo} alt="慕课后台管理系统" />
             React全家桶+AntD 共享经济热门项目后台管理系统
           </div>
         </div>
