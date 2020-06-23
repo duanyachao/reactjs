@@ -83,7 +83,19 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy,
+    // proxy,
+    /**
+     * 设置跨域,2019-08-05
+     */
+    proxy: {
+      '/api': {   
+        target: 'http://nywlw.hnyfkj.com',
+        // pathRewrite: {'^/api': '/api'},
+        changeOrigin: true,
+        secure: false,
+        
+      },
+    },
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons

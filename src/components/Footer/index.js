@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Icon } from 'antd';
 import './index.less';
-export default class Footer extends React.Component {
+class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        版权所有：慕课网&河畔一角（推荐使用谷歌浏览器，可以获得更佳操作页面体验）
-        技术支持：河畔一角
+        {/* <img className="logoB" src="./assets/logoB.png" alt=""/> */}
+        <div className="copyRight">Copyright  <Icon type="copyright" />2019 河南元丰科技网络股份有限公司版权所有</div>
       </div>
     );
   }
 }
+
+export default Footer;

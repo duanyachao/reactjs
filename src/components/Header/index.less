@@ -1,0 +1,45 @@
+@import "./../../styles/default.less";
+
+.header{
+    display: flex;
+    background-color:@colorM;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(66, 66, 66, 0.1);
+    .loginInfo{
+        padding:0 20px;
+        height: 60px;
+        border-bottom:1px solid skyblue;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .userIcon{
+            margin: 0 10px;
+        }
+        .userMsg{
+            margin: 0 10px;
+        }    
+    }
+    .breadcrumb{
+        height: 40px;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        .breadcrumbTitle{
+            margin-left: 30px;
+            font-size: @fontC;
+            position: relative;
+            &:after{
+                position: absolute;
+                content: '';
+                top: 33px;
+                left: 6px;
+                border-left: 12px solid transparent;
+                border-right: 12px solid transparent;
+                border-top: 15px solid @colorM;
+            }
+        }
+        .dateTime{
+            margin-right: 20px;
+        }
+    }
+}

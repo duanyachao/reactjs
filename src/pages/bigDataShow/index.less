@@ -1,0 +1,55 @@
+@import './../../styles/default.less';
+.wrapper{
+    background: url(./../../resource/image/bigData/bg.png) no-repeat;
+    background-size: 100% 100%;
+    height: calc(100vh);
+}
+.bigDataHeader{
+    height: 80px;
+    background: url(./../../resource/image/bigData/title.png) no-repeat;
+    background-size: 100% 100%;
+    .title{
+        color: @colorM;
+        text-align: center;
+        font-size: 2.5em;
+        line-height: 80px;
+    }
+}
+.data_content{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .data_tip{
+        width: 340px;
+        height: 35px;
+        background-color: #2C58A6;
+        line-height: 35px;
+        color:@colorM;
+        font-size: 13px;
+        position: relative;
+        margin-bottom: 25px;
+        margin-left: 20px;
+        text-align: center;
+    }
+    .data_main{
+        // width: calc(100% - 40px);
+        margin-bottom: 40px;
+        // height: 615px;
+        // margin-left: 20px;
+        .main_left{
+            
+        }
+        .main_center{
+            // width: 52%;
+            height: 610px;
+        }
+        .main_right{
+            // width: 24%;
+        }
+    }
+}
+.bigDataFooter{
+    background: none;
+    color: @colorM;
+    text-align: center;
+    font-size: 16px;
+}
